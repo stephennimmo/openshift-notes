@@ -1,0 +1,82 @@
+site_name: OpenShift Notes
+site_description: OpenShift installation and configuration documentation
+site_url: https://stephennimmo.github.io/openshift-notes
+
+theme:
+  name: material
+  logo: assets/images/openshift.png
+  favicon: assets/images/openshift.png
+  font:
+    text: Red Hat Text
+    code: Red Hat Mono
+  palette:
+    scheme: default
+    primary: custom
+    accent: custom
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.expand
+    - navigation.top
+    - navigation.indexes
+    - content.code.copy
+    - content.code.annotate
+    - search.suggest
+    - search.highlight
+    - toc.follow
+
+copyright: "&copy; <a href='https://github.com/stephennimmo'>stephennimmo</a>"
+
+extra:
+  generator: false
+  ocp_version: "4.20"
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+  - macros
+  - open-in-new-tab
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.snippets
+  - attr_list
+  - def_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Install:
+      - Prerequisites: install/prerequisites.md
+      - Building the Bastion: install/bastion.md
+      - Agent Based Install: install/cluster-install.md
+      - SNO Agent Based Install: install/sno-install.md
+  - Post-Install:
+      - Storage: post-install/storage.md
+      - Registry: post-install/registry.md
+      - OpenShift GitOps: post-install/openshift-gitops.md
+      - External Secrets Operator: post-install/external-secrets-operator.md
+      - Advanced Cluster Management: post-install/advanced-cluster-management.md
+      - Workload Availability: post-install/workload-availability.md
+      - Add Worker Node: post-install/add-worker-node.md
+      - Rotate SSH Keys: post-install/rotate-ssh-keys.md
+      - POC Banner: post-install/poc-banner.md
+  - Networking: networking/index.md
+  - Virtualization: virtualization/index.md
+  - Hub Cluster: hub/index.md
+  - Notes:
+      - notes/index.md
+      - Machine Config: notes/create-machine-config.md
+      - Machine Config with Butane: notes/create-machine-config-butane.md

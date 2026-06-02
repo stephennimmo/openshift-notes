@@ -1,0 +1,21 @@
+apiVersion: k8s.ovn.org/v1
+kind: ClusterUserDefinedNetwork
+metadata:
+  name: cudn-no-ipam
+spec:
+  namespaceSelector:
+    matchExpressions:
+      - key: kubernetes.io/metadata.name
+        operator: In
+        values: ["<namespace>", "<namespace2>"]
+  network:
+    topology: Localnet
+    localnet:
+      role: Secondary
+      physicalNetworkName: localnet-bridge-trunk
+      vlan:
+        mode: Access
+        access:
+          id: 4
+      ipam:
+        mode: Disabled

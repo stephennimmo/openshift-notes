@@ -1,0 +1,54 @@
+apiVersion: nmstate.io/v1
+kind: NodeNetworkConfigurationPolicy
+metadata:
+  name: 2-eth-bond-lacp-vlan
+spec:
+  nodeSelector:
+    kubernetes.io/hostname: <hostname>
+  desiredState:
+    interfaces:
+      - name: <devicename>
+        type: ethernet
+        state: up
+        mac-address: <macaddress>
+        ipv4:
+          enabled: false
+        ipv6:
+          enabled: false
+      - name: <devicename2>
+        type: ethernet
+        state: up
+        mac-address: <macaddress2>
+        ipv4:
+          enabled: false
+        ipv6:
+          enabled: false
+      - name: bond1
+        type: bond
+        state: up
+        link-aggregation:
+          mode: 802.3ad
+          port:
+            - <devicename>
+            - <devicename2>
+          options:
+            miimon: "100"
+            lacp_rate: fast
+        ipv4:
+          enabled: false
+        ipv6:
+          enabled: false
+      - name: bond1.<vlanid>
+        type: vlan
+        state: up
+        vlan:
+          base-iface: bond1
+          id: <vlanid>
+        ipv4:
+          enabled: true
+          address:
+            - ip: <ipaddress>
+              prefix-length: 24
+          dhcp: false
+        ipv6:
+          enabled: false

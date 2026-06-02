@@ -1,0 +1,198 @@
+:root {
+  /* Red Hat Core - Red */
+  --rh-red-05: #fef0f0;
+  --rh-red-10: #fce3e3;
+  --rh-red-20: #fbc5c5;
+  --rh-red-30: #f9a8a8;
+  --rh-red-40: #f56e6e;
+  --rh-red-50: #ee0000;
+  --rh-red-60: #a60000;
+  --rh-red-70: #5f0000;
+  --rh-red-80: #3f0000;
+
+  /* Red Hat Core - Neutrals */
+  --rh-white: #ffffff;
+  --rh-gray-10: #f2f2f2;
+  --rh-gray-20: #e0e0e0;
+  --rh-gray-30: #c7c7c7;
+  --rh-gray-40: #a3a3a3;
+  --rh-gray-45: #8c8c8c;
+  --rh-gray-50: #707070;
+  --rh-gray-60: #4d4d4d;
+  --rh-gray-70: #383838;
+  --rh-gray-80: #292929;
+  --rh-gray-90: #1f1f1f;
+  --rh-gray-95: #151515;
+  --rh-black: #000000;
+
+  /* Red Hat Secondary */
+  --rh-orange-40: #f5921b;
+  --rh-yellow-30: #ffcc17;
+  --rh-teal-50: #37a3a3;
+  --rh-teal-60: #147878;
+  --rh-purple-50: #5e40be;
+
+  /* Red Hat Auxiliary - Information */
+  --rh-success-green-50: #63993d;
+  --rh-danger-orange-50: #f0561d;
+  --rh-interaction-blue-50: #0066cc;
+  --rh-interaction-blue-60: #004d99;
+
+  /* Material overrides */
+  --md-primary-fg-color: var(--rh-gray-95);
+  --md-primary-fg-color--light: var(--rh-gray-80);
+  --md-primary-fg-color--dark: var(--rh-black);
+  --md-primary-bg-color: var(--rh-white);
+  --md-primary-bg-color--light: var(--rh-gray-10);
+
+  --md-accent-fg-color: var(--rh-red-50);
+  --md-accent-fg-color--transparent: rgba(238, 0, 0, 0.1);
+  --md-accent-bg-color: var(--rh-white);
+
+  --md-typeset-a-color: var(--rh-interaction-blue-50);
+
+  --md-code-bg-color: var(--rh-gray-10);
+  --md-code-fg-color: var(--rh-gray-80);
+}
+
+/* Header */
+.md-header {
+  background-color: var(--rh-gray-95);
+  border-bottom: 2px solid var(--rh-red-50);
+}
+
+.md-tabs {
+  background-color: var(--rh-gray-90);
+}
+
+.md-tabs__link {
+  color: var(--rh-gray-30);
+}
+
+.md-tabs__link:hover,
+.md-tabs__link--active {
+  color: var(--rh-white);
+}
+
+/* Typography - Red Hat Display for headings */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 700;
+}
+
+.md-typeset h1 {
+  color: var(--rh-red-50);
+}
+
+.md-typeset h2 {
+  color: var(--rh-gray-95);
+  border-bottom: 1px solid var(--rh-gray-20);
+  padding-bottom: 0.3em;
+}
+
+/* Links */
+.md-typeset a {
+  color: var(--rh-interaction-blue-50);
+}
+
+.md-typeset a:hover {
+  color: var(--rh-interaction-blue-60);
+  text-decoration: underline;
+}
+
+/* Navigation */
+.md-nav__link--active,
+.md-nav__item--active > .md-nav__link {
+  color: var(--rh-red-50);
+}
+
+.md-nav__link:hover,
+.md-nav__link:focus {
+  color: var(--rh-red-50);
+}
+
+/* Inline code */
+.md-typeset code {
+  background-color: var(--rh-gray-10);
+  border: 1px solid var(--rh-gray-20);
+  color: var(--rh-red-60);
+}
+
+.md-typeset pre > code {
+  background-color: var(--rh-gray-10);
+  border: 1px solid var(--rh-gray-20);
+  color: var(--rh-gray-80);
+}
+
+/* Tables */
+.md-typeset table:not([class]) th {
+  background-color: var(--rh-gray-95);
+  color: var(--rh-white);
+}
+
+.md-typeset table:not([class]) tr:hover td {
+  background-color: var(--rh-red-05);
+}
+
+/* Admonitions */
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  border-color: var(--rh-interaction-blue-50);
+}
+
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+  border-color: var(--rh-yellow-30);
+}
+
+.md-typeset .admonition.danger,
+.md-typeset details.danger {
+  border-color: var(--rh-danger-orange-50);
+}
+
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-color: var(--rh-teal-50);
+}
+
+.md-typeset .admonition.example,
+.md-typeset details.example {
+  border-color: var(--rh-red-50);
+}
+
+/* Content tabs */
+.md-typeset .tabbed-labels > .tabbed-labels__active,
+.md-typeset .tabbed-labels > label.active {
+  color: var(--rh-red-50);
+  border-color: var(--rh-red-50);
+}
+
+/* Footer */
+.md-footer {
+  border-top: 2px solid var(--rh-red-50);
+  background-color: var(--rh-gray-95);
+}
+
+.md-footer-meta {
+  background-color: var(--rh-black);
+}
+
+/* Back to top button */
+.md-top {
+  background-color: var(--rh-red-50);
+  color: var(--rh-white);
+}
+
+.md-top:hover {
+  background-color: var(--rh-red-60);
+}
+
+/* Blockquotes */
+.md-typeset blockquote {
+  border-left-color: var(--rh-red-50);
+}
