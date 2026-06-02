@@ -29,7 +29,6 @@ copyright: "&copy; <a href='https://github.com/stephennimmo'>stephennimmo</a>"
 
 extra:
   generator: false
-  ocp_version: "4.20"
 
 extra_css:
   - stylesheets/extra.css

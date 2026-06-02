@@ -1,6 +1,6 @@
 # Single Node OpenShift (SNO) - Agent Based Install
 
-[Red Hat Documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/{{ ocp_version }}/html/installing_an_on-premise_cluster_with_the_agent-based_installer/preparing-to-install-with-agent-based-installer)
+[Red Hat Documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/latest/html/installing_an_on-premise_cluster_with_the_agent-based_installer/preparing-to-install-with-agent-based-installer)
 
 A Single Node OpenShift (SNO) cluster runs the control plane and workloads on a single host. It is suited for edge deployments, labs, and resource-constrained environments.
 

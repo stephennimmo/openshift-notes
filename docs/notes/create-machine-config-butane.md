@@ -16,7 +16,7 @@ Create a file called `99-worker-example.bu`:
 
 ```yaml
 variant: openshift
-version: {{ ocp_version }}.0
+version: latest.0
 metadata:
   name: 99-worker-example
   labels:
@@ -47,7 +47,7 @@ You can reference a local file rather than inlining the contents:
 
 ```yaml
 variant: openshift
-version: {{ ocp_version }}.0
+version: latest.0
 metadata:
   name: 99-worker-example
   labels:

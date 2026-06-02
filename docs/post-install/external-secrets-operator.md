@@ -1,6 +1,6 @@
 # External Secrets Operator
 
-[Red Hat Documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/{{ ocp_version }}/html/security_and_compliance/external-secrets-operator-for-red-hat-openshift)
+[Red Hat Documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/latest/html/security_and_compliance/external-secrets-operator-for-red-hat-openshift)
 
 The External Secrets Operator integrates external secret management systems (AWS Secrets Manager, HashiCorp Vault, Azure Key Vault, Google Secret Manager, IBM Cloud Secrets Manager) with OpenShift. It fetches secrets from external providers and provisions them as native Kubernetes `Secret` resources.
 
@@ -68,7 +68,7 @@ spec:
 EOF
 ```
 
-The egress policy above allows the controller to reach any external provider. To restrict egress to specific providers, see [Configuring network policy for the operand](https://docs.redhat.com/en/documentation/openshift_container_platform/{{ ocp_version }}/html/security_and_compliance/external-secrets-operator-for-red-hat-openshift#external-secrets-operator-config-net-policy).
+The egress policy above allows the controller to reach any external provider. To restrict egress to specific providers, see [Configuring network policy for the operand](https://docs.redhat.com/en/documentation/openshift_container_platform/latest/html/security_and_compliance/external-secrets-operator-for-red-hat-openshift#external-secrets-operator-config-net-policy).
 
 Verify the operand pods are running:
 

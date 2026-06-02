@@ -30,7 +30,7 @@ sudo reboot
 Install the required tools.
 
 ```shell
-OCP_VERSION={{ ocp_version }}
+OCP_VERSION=latest
 wget "https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable-${OCP_VERSION}/openshift-install-linux.tar.gz" -P /tmp
 sudo tar -xvzf /tmp/openshift-install-linux.tar.gz -C /usr/local/bin
 wget "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable-${OCP_VERSION}/openshift-client-linux.tar.gz" -P /tmp
@@ -104,7 +104,7 @@ dig +noall +answer @<dns> test.apps.<cluster_suffix>
 
 ## Firewall Checks
 
-Documentation for the firewall configuration ([link](https://docs.redhat.com/en/documentation/openshift_container_platform/{{ ocp_version }}/html/installation_configuration/configuring-firewall)). We will need access to the following for pulling OpenShift container images.
+Documentation for the firewall configuration ([link](https://docs.redhat.com/en/documentation/openshift_container_platform/latest/html/installation_configuration/configuring-firewall)). We will need access to the following for pulling OpenShift container images.
 
 ```
 registry.redhat.io

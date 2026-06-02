@@ -1,8 +1,8 @@
 # Prerequisites for OpenShift Install
 
 * You need a [Red Hat account](https://www.redhat.com/wapps/ugc/register.html) associated with your organization. Please do not use personal Red Hat accounts for business purposes. 
-* You will need to open your firewall to whitelist all the Red Hat associated content sites. Documentation for the firewall configuration ([link](https://docs.redhat.com/en/documentation/openshift_container_platform/{{ ocp_version }}/html/installation_configuration/configuring-firewall)).
-* You will need to create DNS records for each cluster you install. One of the DNS records is a wildcard - `*.apps.<cluster_name>.<base_domain>` ([link](https://docs.redhat.com/en/documentation/openshift_container_platform/{{ ocp_version }}/html-single/installing_on_any_platform/index#installation-dns-user-infra_installing-platform-agnostic))
+* You will need to open your firewall to whitelist all the Red Hat associated content sites. Documentation for the firewall configuration ([link](https://docs.redhat.com/en/documentation/openshift_container_platform/latest/html/installation_configuration/configuring-firewall)).
+* You will need to create DNS records for each cluster you install. One of the DNS records is a wildcard - `*.apps.<cluster_name>.<base_domain>` ([link](https://docs.redhat.com/en/documentation/openshift_container_platform/latest/html-single/installing_on_any_platform/index#installation-dns-user-infra_installing-platform-agnostic))
 * You will need to be able to download and install an OEM version of Red Hat Enterprise Linux. Download Red Hat Enterprise Linux 9.x Binary DVD ([link](https://access.redhat.com/downloads/content/rhel))
 
 ## Required Hardware

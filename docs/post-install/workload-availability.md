@@ -219,7 +219,7 @@ spec:
 
 ## Kube Descheduler Operator
 
-[Documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/{{ ocp_version }}/html/nodes/controlling-pod-placement-onto-nodes-scheduling#nodes-descheduler)
+[Documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/latest/html/nodes/controlling-pod-placement-onto-nodes-scheduling#nodes-descheduler)
 
 The Descheduler runs periodically and evicts pods that violate scheduling rules so the default scheduler can reschedule them onto more appropriate nodes. This is useful after node maintenance, cluster scaling, or changes to affinity/taint rules.
 
@@ -305,7 +305,7 @@ oc apply -f kubedescheduler.yaml
 
 ### OpenShift Virtualization
 
-[Documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/{{ ocp_version }}/html/virtualization/virtual-machines#virt-enabling-descheduler-evictions)
+[Documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/latest/html/virtualization/virtual-machines#virt-enabling-descheduler-evictions)
 
 If you are running OpenShift Virtualization, use the `DevPreviewLongLifecycle` profile. This profile handles long-running VM workloads and triggers live migrations instead of pod deletions when rebalancing.
 
