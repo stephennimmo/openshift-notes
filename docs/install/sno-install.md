@@ -12,7 +12,7 @@ A Single Node OpenShift (SNO) cluster runs the control plane and workloads on a 
 
 ## Prerequisites
 
-Complete the [prerequisites](prerequisites.md) and set up the [bastion](bastion.md).
+Complete the [prerequisites](prerequisites.md) and set up the [installation host](installation-host.md).
 
 ## DNS
 

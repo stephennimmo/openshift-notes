@@ -1,7 +1,7 @@
 # OpenShift Install on Bare Metal in your datacenter
 
 Did you already perform the [prerequisites](prerequisites.md)? 
-This should all be done from the [bastion](bastion.md). 
+This should all be done from the [installation host](installation-host.md). 
 
 ## Create the Configurations
 
@@ -12,7 +12,7 @@ The typical agent based install requires two configuration files.
 
 The install-config.yaml contains all the cluster level information while the agent-config.yaml provides host level configurations.
 
-> You can accomplish all of this with bastion tools like vi. It is highly recommended to use tools like Visual Studio Code (vscode) to help with yaml formatting.
+> You can accomplish all of this with installation host tools like vi. It is highly recommended to use tools like Visual Studio Code (vscode) to help with yaml formatting.
 
 ### Create the Working Directory
 
@@ -187,7 +187,7 @@ This is going to generate an agent.x86_64.iso file in the install directory whic
 
 The best way to provide the ISO as an HTTP source if you are using a BMC like iLo or iDRAC. Not doing so could result in issues during the install due to network contention using the web interfaces of those tools.
 
-Luckily, on the bastion host, we already have podman installed so we can just use that to serve.
+Luckily, on the installation host, we already have podman installed so we can just use that to serve.
 
 ```shell
 podman run -d --name iso-http \
@@ -199,10 +199,10 @@ podman run -d --name iso-http \
 Test retrieving the iso using the following command.
 
 ```shell
-wget http://bastionhostname:8080/agent.x86_64.iso
+wget http://installationhostname:8080/agent.x86_64.iso
 ```
 
-> Don't forget to [open the host firewall](bastion.md#open-port-8080-for-iso-http) on the bastion.
+> Don't forget to [open the host firewall](installation-host.md#open-port-8080-for-iso-http) on the installation host.
 
 If for some reason this solution will not work, you can install httpd and serve from there.
 

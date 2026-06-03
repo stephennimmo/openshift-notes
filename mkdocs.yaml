@@ -18,7 +18,6 @@ theme:
     - navigation.tracking
     - navigation.expand
     - navigation.top
-    - navigation.indexes
     - content.code.copy
     - content.code.annotate
     - search.suggest
@@ -58,11 +57,13 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Install:
+      - Overview: install/index.md
       - Prerequisites: install/prerequisites.md
-      - Building the Bastion: install/bastion.md
+      - Building the Installation Host: install/installation-host.md
       - Agent Based Install: install/cluster-install.md
       - SNO Agent Based Install: install/sno-install.md
   - Post-Install:
+      - Overview: post-install/index.md
       - Storage: post-install/storage.md
       - Registry: post-install/registry.md
       - OpenShift GitOps: post-install/openshift-gitops.md

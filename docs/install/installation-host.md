@@ -1,8 +1,8 @@
-# Building the OpenShift Bastion
+# Building the OpenShift Installation Host
 
-The bastion host serves multiple purposes. All of our install work is done here. It's used to validate the environment prior to installation. It provides additional tools for installation such as a web server environment for the ISO images.
+The installation host serves multiple purposes. All of our install work is done here. It's used to validate the environment prior to installation. It provides additional tools for installation such as a web server environment for the ISO images.
 
-The bastion host can be a bare metal or virtualized host and only requires what is needed for a normal Red Hat Enterprise Linux install. We recommend at least 2 CPU, 8 GB memory and 100 GB disk. It should be on the same network as the targeted hosts for the OpenShift cluster install so we can use it to validate the firewall is open prior to installation. 
+The installation host can be a bare metal or virtualized host and only requires what is needed for a normal Red Hat Enterprise Linux install. We recommend at least 2 CPU, 8 GB memory and 100 GB disk. It should be on the same network as the targeted hosts for the OpenShift cluster install so we can use it to validate the firewall is open prior to installation. 
 
 > But I want to use a company image? Please make sure any processes that may interfere with web hosting or the other install processes is turned off. 
 
@@ -11,7 +11,7 @@ The bastion host can be a bare metal or virtualized host and only requires what 
 1. Download Red Hat Enterprise Linux 9.x Binary DVD ([link](https://access.redhat.com/downloads/content/rhel))
 2. Boot host from ISO and perform install as Server with GUI
 3. Make sure to enable SSH for newly created user and make them an administrator
-4. Reboot and SSH into bastion host as administrative user
+4. Reboot and SSH into installation host as administrative user
 
 ## Register the Host
 
@@ -94,7 +94,7 @@ dig +noall +answer @<dns> test.apps.<cluster_suffix>
 
 | A Record                                   | IP Address | Description        |
 | ---                                        | ---        | ---                |
-| `bastion.<cluster_suffix>`                 | 10.1.0.4   | IP for the bastion |
+| `installation.<cluster_suffix>`            | 10.1.0.4   | IP for the installation host |
 | `openshift-control-plane-1.<cluster_suffix>` | 10.1.0.11  | IP for cp1         |
 | `openshift-control-plane-2.<cluster_suffix>` | 10.1.0.12  | IP for cp2         |
 | `openshift-control-plane-3.<cluster_suffix>` | 10.1.0.13  | IP for cp3         |
