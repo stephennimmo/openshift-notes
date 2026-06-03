@@ -62,6 +62,7 @@ nav:
       - Building the Installation Host: install/installation-host.md
       - Hub Agent Based Install: install/hub-install.md
       - Cluster Agent Based Install: install/cluster-install.md
+      - Troubleshooting: install/install-troubleshooting.md
   - Post-Install:
       - Overview: post-install/index.md
       - Storage: post-install/storage.md

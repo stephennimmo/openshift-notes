@@ -1,4 +1,4 @@
-# Single Node OpenShift (SNO) - Agent Based Install
+# Hub Agent Based Install
 
 [Red Hat Documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/latest/html/installing_an_on-premise_cluster_with_the_agent-based_installer/preparing-to-install-with-agent-based-installer)
 
@@ -157,12 +157,26 @@ openshift-install agent wait-for install-complete --dir=install
 
 The kubeadmin credentials and kubeconfig are written to the `install` directory on completion.
 
-## Validate
+## Validate the Install
+
+Login to the Cluster:
 
 ```shell
-oc login --server=https://api.sno.ocp.basedomain.com:6443 -u kubeadmin -p <password>
-oc get nodes
-oc get clusteroperators
+oc login --server=https://api.cluster.basedomain.com:6443 -u kubeadmin -p <password>
 ```
 
-You should see a single node with roles `control-plane,master,worker`.
+### Test Connectivity
+
+```shell
+oc debug node/<worker-node-name> -- chroot /host \
+  podman pull registry.redhat.io/ubi9/ubi:latest
+```
+
+Cleanup the leftover install and configuration pods:
+
+```shell
+oc delete pods --all-namespaces --field-selector=status.phase=Succeeded
+oc delete pods --all-namespaces --field-selector=status.phase=Failed
+```
+
+For troubleshooting install issues, see [Install Troubleshooting](install-troubleshooting.md).

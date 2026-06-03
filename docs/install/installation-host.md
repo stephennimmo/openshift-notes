@@ -194,4 +194,4 @@ nslookup registry.redhat.io
 podman login registry.redhat.io
 ```
 
-Now go [install](cluster-install.md).
+Now go [install](hub-install.md) the hub cluster. Or [install](cluster-install.md) the standalone cluster. 
