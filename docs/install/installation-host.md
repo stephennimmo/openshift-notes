@@ -30,13 +30,13 @@ sudo reboot
 Install the required tools.
 
 ```shell
-OCP_VERSION=latest
+OCP_VERSION=4.21
 wget "https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable-${OCP_VERSION}/openshift-install-linux.tar.gz" -P /tmp
 sudo tar -xvzf /tmp/openshift-install-linux.tar.gz -C /usr/local/bin
 wget "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable-${OCP_VERSION}/openshift-client-linux.tar.gz" -P /tmp
 sudo tar -xvzf /tmp/openshift-client-linux.tar.gz -C /usr/local/bin
 rm /tmp/openshift-install-linux.tar.gz /tmp/openshift-client-linux.tar.gz -y
-sudo dnf install nmstate git podman 
+sudo dnf install nmstate git podman -y
 ```
 
 Check for the availability of the required tools.
@@ -76,9 +76,9 @@ Create the following A records in your DNS based on the values from the [prerequ
 
 | A Record                     | IP Address | Description                           |
 | ---                          | ---        | ---                                   |
-| `api.<cluster_suffix>`       | 10.1.0.9   | Virtual IP (VIP) for the API endpoint |
-| `api-int.<cluster_suffix>`   | 10.1.0.9   | Internal VIP for the API endpoint     |
-| `*.apps.<cluster_suffix>`    | 10.1.0.10  | Virtual IP for the ingress endpoint   |
+| `api.<cluster_suffix>`       | 10.1.0.4   | Virtual IP (VIP) for the API endpoint |
+| `api-int.<cluster_suffix>`   | 10.1.0.4   | Internal VIP for the API endpoint     |
+| `*.apps.<cluster_suffix>`    | 10.1.0.5   | Virtual IP for the ingress endpoint   |
 
 Validate the DNS using dig:
 
@@ -148,6 +148,16 @@ registry.connect.redhat.com
 If you are using a MITM proxy which is doing TLS inspection, the Red Hat CDN for `dnf install` or `yum install` uses `cdn.redhat.com` which has a self-signed certificate. If your MITM proxy automatically blocks self-signed certificates, you will need to whitelist `cdn.redhat.com`.
 
 It is recommended that all entries for the firewall as detailed above are also allowed through any TLS inspection processes.
+
+To download the intermediate/root certificate from a MITM proxy for inclusion in the OpenShift trust bundle:
+
+```shell
+openssl s_client \
+  -proxy proxy.example.com:3128 \
+  -connect example.com:443 \
+  -showcerts </dev/null 2>/dev/null \
+  | openssl x509 -outform PEM
+```
 
 ### Connectivity Checks
 

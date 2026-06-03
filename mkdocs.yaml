@@ -60,8 +60,8 @@ nav:
       - Overview: install/index.md
       - Prerequisites: install/prerequisites.md
       - Building the Installation Host: install/installation-host.md
-      - Agent Based Install: install/cluster-install.md
-      - SNO Agent Based Install: install/sno-install.md
+      - Hub Agent Based Install: install/hub-install.md
+      - Cluster Agent Based Install: install/cluster-install.md
   - Post-Install:
       - Overview: post-install/index.md
       - Storage: post-install/storage.md
